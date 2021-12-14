@@ -89,7 +89,6 @@ def get_extremeData_byYear(T,data):
 
 ## STREAMLIT INTERACTIVE
 # HEADER
-st.balloons()
 st.markdown(f"<h1 style='text-align: center'>Informasi Seputar Data Produksi Minyak Mentah dari Berbagai Negara di Seluruh Dunia</h1>", unsafe_allow_html=True)
 st.markdown('''---''')
 # ABOUT PROGRAM
