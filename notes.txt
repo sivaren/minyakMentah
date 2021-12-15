@@ -1,0 +1,68 @@
+requirements:
+pip install streamlit
+pip install pandas
+pip install plotly
+
+struktural program:
+- MANAGING DATA
+- FUNCTIONS
+- STREAMLIT INTERACTIVE
+
+functions:
+> UNTUK SOAL A
+get_CountryProduction_byYear(countryName, data)
+countryName : nama lengkap negara (string)
+data        : data produksi minyak mentah dunia (dataframe)
+return      : mengembalikan data dari negara tertentu (dataframe)
+
+> UNTUK SOAL B
+get_CountriesProduction_aYear(B,T,data)
+B           : banyaknya data yang ingin ditampilkan (integer)
+T           : tahun produksi (integer)
+data        : data produksi minyak mentah dunia (dataframe)
+return      : mengembalikan data B-besar negara dengan jumlah produksi terbesar pada tahun T (dataframe)
+
+> UNTUK SOAL C
+get_countries_cumProduction(B, data)
+B           : banyaknya data yang ingin ditampilkan (integer)
+data        : data produksi minyak mentah dunia (dataframe)
+return      : mengembalikan data B-besar negara dengan jumlah produksi kumulatif terbesar sepanjang tahun (dataframe)
+
+> UNTUK SOAL D
+get_extremeData_byYear(T,data)
+T           : tahun produksi (integer)
+data        : data produksi minyak mentah dunia (dataframe)
+return      : mengembalikan enam dataframe (dataframe)
+- dfMaxT    : (1) data dengan jumlah produksi terbesar pada tahun T
+- dfMax     : (1) data dengan jumlah produksi terbesar sepanjang tahun
+- dfMinT    : (1) data dengan jumlah produksi terkecil pada tahun T (tidak sama dengan nol)
+- dfMin     : (1) data dengan jumlah produksi terkecil sepanjang tahun (tidak sama dengan nol)
+- dfNullT   : (1) data dengan jumlah produksi sama dengan nol pada tahun T
+- dfNull    : (1) data dengan jumlah produksi sama dengan nol pada sepanjang tahun
+
+variables:
+kodeNegara          - list kode negara dari produksi_minyak_mentah.csv
+dictCountries       - dictionary dengan key: nama lengkap negara dan value: kode negara, diambil dari kode_negara_lengkap.json: {'Afghanistan': 'AFG', ...}
+key_list            - key_list menyimpan semua key dari dictCountries: ['Afghanistan', '�land Islands', ...]
+val_list            - val_list menyimpan semua value dari dictCountries: ['AFG', 'ALA', ...]
+tupCountry          - tuple yang berisi nama-nama lengkap negara
+regionCountries     - dictionary dengan key: kode negara dan value: region dari negara tsb
+subRegionCountries  - dictionary dengan key: kode negara dan value: sub region dari negara tsb
+someOrg             - list yang berisi kode dari organisasi dunia (kode ini terdapat pada produksi_minyak_mentah.csv, tapi padahal bukan negara)
+
+rawData             - data fresh from csv (belum di manipulasi ada kolom produksi_kumulatif)
+data                - data yang telah ditambahkan kolom produksi_kumulatif
+
+dataOrg             - data yang hanya berisikan organisasi dunia
+dataOrgAsc          - data organisasi dunia yang terurut membesar berdasarkan jumlah produksinya
+dataOrgDsc          - data organisasi dunia yang terurut mengecil berdasarkan jumlah produksinya
+
+run program (on terminal):
+streamlit run fileName.py
+
+source: 
+https://www.geeksforgeeks.org/how-to-select-multiple-columns-in-a-pandas-dataframe/
+https://www.geeksforgeeks.org/python-pandas-dataframe-min/
+https://stackoverflow.com/questions/22650833/pandas-groupby-cumulative-sum
+https://www.youtube.com/watch?v=RHzjE-WBaSk
+https://plotly.com/python/bar-charts/
